@@ -13,10 +13,21 @@ class MainStackView: UIStackView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
+        setupStackView()
+        configure()
+        stackViewsArray.forEach { addArrangedSubview($0)}
     }
     
     required init(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    private func configure() {
+        axis = .vertical
+        spacing = 1
+        distribution = .fillEqually
+        translatesAutoresizingMaskIntoConstraints = false
     }
     
     private func createButton(title: String, tag: Int, color: UIColor) -> UIButton {
@@ -41,6 +52,9 @@ class MainStackView: UIStackView {
         let buttonComma = createButton(title: ",", tag: 10, color: .gray)
         let buttonEqual = createButton(title: "=", tag: 11, color: .orange)
         let firstStackView = UIStackView(subviews: [button0, buttonComma, buttonEqual])
+        button0.widthAnchor.constraint(equalTo: firstStackView.widthAnchor, multiplier: 0.5).isActive = true
+        buttonComma.widthAnchor.constraint(equalTo: buttonEqual.widthAnchor, multiplier: 1).isActive = true
+        firstStackView.distribution = .fill
         
         let button1 = createButton(title: "1", tag: 1, color: .gray)
         let button2 = createButton(title: "2", tag: 2, color: .gray)
