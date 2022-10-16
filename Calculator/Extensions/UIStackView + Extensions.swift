@@ -11,7 +11,7 @@ extension UIStackView {
     convenience init(subviews: [UIView]) {
         self.init(arrangedSubviews: subviews)
         self.axis = .horizontal
-        self.spacing = 1
+        self.spacing = 20
         self.distribution = .fillEqually
     }
 }

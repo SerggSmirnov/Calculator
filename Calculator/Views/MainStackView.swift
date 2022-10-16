@@ -7,9 +7,16 @@
 
 import UIKit
 
+protocol MainStackViewProtocol: AnyObject {
+    func tapNumberButton(tag: Int)
+    func tapActionButton(tag: Int)
+}
+
 class MainStackView: UIStackView {
     
     private var stackViewsArray = [UIStackView]()
+    
+    weak var delegate: MainStackViewProtocol?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -25,7 +32,7 @@ class MainStackView: UIStackView {
     
     private func configure() {
         axis = .vertical
-        spacing = 1
+        spacing = 20
         distribution = .fillEqually
         translatesAutoresizingMaskIntoConstraints = false
     }
@@ -44,16 +51,16 @@ class MainStackView: UIStackView {
     }
     
     @objc private func keyboardButtonTapped(sender: UIButton) {
-        print(sender.tag)
+        sender.tag < 10 ? delegate?.tapNumberButton(tag: sender.tag) : delegate?.tapActionButton(tag: sender.tag)
     }
     
     private func setupStackView() {
         let button0 = createButton(title: "0", tag: 0, color: .gray)
-        let buttonComma = createButton(title: ",", tag: 10, color: .gray)
+        let buttonPoint = createButton(title: ".", tag: 10, color: .gray)
         let buttonEqual = createButton(title: "=", tag: 11, color: .orange)
-        let firstStackView = UIStackView(subviews: [button0, buttonComma, buttonEqual])
-        button0.widthAnchor.constraint(equalTo: firstStackView.widthAnchor, multiplier: 0.5).isActive = true
-        buttonComma.widthAnchor.constraint(equalTo: buttonEqual.widthAnchor, multiplier: 1).isActive = true
+        let firstStackView = UIStackView(subviews: [button0, buttonPoint, buttonEqual])
+        button0.widthAnchor.constraint(equalTo: firstStackView.widthAnchor, multiplier: 0.475).isActive = true
+        buttonPoint.widthAnchor.constraint(equalTo: buttonEqual.widthAnchor, multiplier: 1).isActive = true
         firstStackView.distribution = .fill
         
         let button1 = createButton(title: "1", tag: 1, color: .gray)
@@ -71,7 +78,7 @@ class MainStackView: UIStackView {
         let button7 = createButton(title: "7", tag: 7, color: .gray)
         let button8 = createButton(title: "8", tag: 8, color: .gray)
         let button9 = createButton(title: "9", tag: 9, color: .gray)
-        let buttonMulti = createButton(title: "x", tag: 14, color: .orange)
+        let buttonMulti = createButton(title: "X", tag: 14, color: .orange)
         let fourthStackView = UIStackView(subviews: [button7, button8, button9, buttonMulti])
         
         let buttonAC = createButton(title: "AC", tag: 18, color: .darkGray)

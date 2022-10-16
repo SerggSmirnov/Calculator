@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5017038428FC495600E7427B /* OperationsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5017038328FC495600E7427B /* OperationsModel.swift */; };
+		5017038628FC49FF00E7427B /* CalculationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5017038528FC49FF00E7427B /* CalculationModel.swift */; };
 		50EC504D28EF26F100559577 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EC504C28EF26F100559577 /* AppDelegate.swift */; };
 		50EC504F28EF26F100559577 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EC504E28EF26F100559577 /* SceneDelegate.swift */; };
 		50EC505128EF26F100559577 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EC505028EF26F100559577 /* MainViewController.swift */; };
@@ -17,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5017038328FC495600E7427B /* OperationsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationsModel.swift; sourceTree = "<group>"; };
+		5017038528FC49FF00E7427B /* CalculationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculationModel.swift; sourceTree = "<group>"; };
 		50EC504928EF26F100559577 /* Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50EC504C28EF26F100559577 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		50EC504E28EF26F100559577 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -90,6 +94,8 @@
 		50EC506228EF2B2D00559577 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				5017038328FC495600E7427B /* OperationsModel.swift */,
+				5017038528FC49FF00E7427B /* CalculationModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -190,9 +196,11 @@
 			files = (
 				50EC506628EF2C6F00559577 /* MainStackView.swift in Sources */,
 				50EC505128EF26F100559577 /* MainViewController.swift in Sources */,
+				5017038628FC49FF00E7427B /* CalculationModel.swift in Sources */,
 				50EC504D28EF26F100559577 /* AppDelegate.swift in Sources */,
 				50EC506928EF31CD00559577 /* UIStackView + Extensions.swift in Sources */,
 				50EC504F28EF26F100559577 /* SceneDelegate.swift in Sources */,
+				5017038428FC495600E7427B /* OperationsModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
