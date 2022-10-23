@@ -32,7 +32,7 @@ class MainStackView: UIStackView {
     
     private func configure() {
         axis = .vertical
-        spacing = 20
+        spacing = 10
         distribution = .fillEqually
         translatesAutoresizingMaskIntoConstraints = false
     }
@@ -56,11 +56,11 @@ class MainStackView: UIStackView {
     
     private func setupStackView() {
         let button0 = createButton(title: "0", tag: 0, color: .gray)
-        let buttonPoint = createButton(title: ".", tag: 10, color: .gray)
+        let buttonComma = createButton(title: ",", tag: 10, color: .gray)
         let buttonEqual = createButton(title: "=", tag: 11, color: .orange)
-        let firstStackView = UIStackView(subviews: [button0, buttonPoint, buttonEqual])
-        button0.widthAnchor.constraint(equalTo: firstStackView.widthAnchor, multiplier: 0.475).isActive = true
-        buttonPoint.widthAnchor.constraint(equalTo: buttonEqual.widthAnchor, multiplier: 1).isActive = true
+        let firstStackView = UIStackView(subviews: [button0, buttonComma, buttonEqual])
+        button0.widthAnchor.constraint(equalTo: firstStackView.widthAnchor, multiplier: 0.485).isActive = true
+        buttonComma.widthAnchor.constraint(equalTo: buttonEqual.widthAnchor, multiplier: 1).isActive = true
         firstStackView.distribution = .fill
         
         let button1 = createButton(title: "1", tag: 1, color: .gray)
